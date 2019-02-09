@@ -1,0 +1,29 @@
+@import '../../../../projects/flow-based/src/lib/utils/_utils.scss';
+
+canvas {
+  cursor: default;
+  @include xxl-size(400px);
+}
+
+.canvas-wrapper {
+  position: relative;
+}
+
+.zoom,
+.xmax-xmin {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  padding: 3px;
+  position: absolute;
+  z-index: 100;
+}
+
+.zoom {
+  left: 5px;
+  top: 30px;
+}
+
+.xmax-xmin {
+  left: 5px;
+  top: 5px;
+}

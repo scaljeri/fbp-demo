@@ -1,0 +1,45 @@
+@import './utils/utils';
+@import './utils/variables';
+
+:host {
+  background-color: transparent;
+  border-radius: 13px;
+  display: inline-flex;
+  @include xxl-size(100%);
+
+  .active-socket-in {
+    --socket-in-disabled: #900;
+
+    ::ng-deep .sockets-in .socket {
+      pointer-events: none;
+    }
+  }
+
+  .active-socket-out {
+    --socket-out-disabled: #900;
+
+    ::ng-deep .sockets-out .socket {
+      pointer-events: none;
+    }
+  }
+
+  > [xxlmovablearea] {
+    @include xxl-size(100%);
+  }
+}
+
+xxl-connection-lines {
+  @include fb-position(absolute, 0px 0px 0px 0px);
+}
+
+fb-node {
+  z-index: 2;
+
+  &.is-moving {
+    z-index: 5;
+  }
+
+  &.is-active {
+    z-index: 4;
+  }
+}

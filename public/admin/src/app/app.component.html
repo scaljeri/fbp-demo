@@ -1,0 +1,23 @@
+<mat-toolbar [color]="'primary'">
+  <span>Flow based programming</span>
+  <div class="button-wrapper">
+    <button mat-button (click)="openModal()" class="add">Add</button>
+    <button mat-button (click)="showJSON()" class="btn btn-primary json" class="json">{{showJson ? 'Flow' :
+      'JSON'}}
+    </button>
+    <mat-form-field class="example-full-width">
+      <input matInput [(ngModel)]="endpoint">
+    </mat-form-field>
+    <button mat-button (click)="loadJson()" class="add">Load</button>
+    <button mat-button (click)="saveJson()" class="add">Save</button>
+  </div>
+</mat-toolbar>
+
+<main>
+  <fb-flow *ngIf="!showJson" [flow]="flow"></fb-flow>
+
+  <article *ngIf="showJson" class="flow-as-json">
+    <pre>{{flow | json}}</pre>
+  </article>
+</main>
+

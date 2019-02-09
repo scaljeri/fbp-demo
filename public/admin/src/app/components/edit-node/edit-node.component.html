@@ -1,0 +1,74 @@
+<mat-card class="title">
+  <mat-card-content>
+    <mat-form-field matLine>
+      <input matInput placeholder="Title" [(ngModel)]="state.title">
+    </mat-form-field>
+  </mat-card-content>
+</mat-card>
+
+<div class="socket-wrapper" *ngIf="hasSockets()">
+  <mat-list class="socket-in">
+    <mat-list-item *ngFor="let socket of sockets | socketIn;let i = index">
+      <button *ngIf="deleteSocket" #action mat-mini-fab color="warn" (click)="onDelete(socket, i)" [attr.data-socket-id]="socket.id"
+              class="action">
+        <mat-icon>delete_forever</mat-icon>
+      </button>
+
+      <button *ngIf="!deleteSocket" #action mat-mini-fab color="primary" [attr.data-socket-id]="socket.id"
+              class="action socket-direction">
+        <mat-icon>arrow_right_alt</mat-icon>
+      </button>
+
+      <mat-form-field matLine>
+        <input matInput placeholder="Socket name" [(ngModel)]="socket.name">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" matLine>
+        <input type="text" placeholder="Input format" aria-label="Number" matInput [(ngModel)]="socket.format" [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let option of types" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+
+      <mat-form-field matLine>
+        <mat-label>Colors</mat-label>
+        <input matInput type="color" (ngModelChange)="setSocketColor($event, socket)"
+               [ngModel]="getSocketColor(socket)">
+      </mat-form-field>
+    </mat-list-item>
+  </mat-list>
+
+  <mat-list class="socket-out">
+    <mat-list-item *ngFor="let socket of sockets | socketOut;let i = index">
+      <button *ngIf="deleteSocket" #action mat-mini-fab color="warn" (click)="onDelete(socket, i)" [attr.data-socket-id]="socket.id"
+              class="action">
+        <mat-icon>delete_forever</mat-icon>
+      </button>
+
+      <button *ngIf="!deleteSocket" #action mat-mini-fab color="primary" [attr.data-socket-id]="socket.id"
+              class="action socket-direction">
+        <mat-icon>arrow_right_alt</mat-icon>
+      </button>
+
+      <mat-form-field matLine>
+        <input matInput placeholder="Socket name" [(ngModel)]="socket.name">
+      </mat-form-field>
+      <mat-form-field class="example-full-width" matLine>
+        <input type="text" placeholder="Input format" aria-label="Number" matInput [(ngModel)]="socket.format" [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let option of types" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+      <mat-form-field matLine>
+        <mat-label>Colors</mat-label>
+        <input matInput type="color" (ngModelChange)="setSocketColor($event, socket)"
+               [ngModel]="getSocketColor(socket)">
+      </mat-form-field>
+      <mat-divider></mat-divider>
+    </mat-list-item>
+  </mat-list>
+</div>

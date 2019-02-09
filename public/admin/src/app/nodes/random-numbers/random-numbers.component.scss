@@ -1,0 +1,85 @@
+@import 'utils/utils';
+
+:host {
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+}
+
+fb-normal-node {
+  &:not(.is-active) {
+    .config {
+      display: none;
+    }
+  }
+
+  &.is-active {
+    .minified {
+      display: none;
+    }
+  }
+}
+
+fb-default-front {
+  min-height: 80px;
+  min-width: 72px;
+}
+
+.card-wrapper {
+  display: flex;
+
+  mat-card {
+    flex: 1;
+  }
+
+  mat-card ~ mat-card {
+    margin-left: 8px;
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.config {
+  background-color: #fff;
+  width: 500px;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    padding: var(--fb-gutter-size);
+
+    label {
+      align-items: flex-start;
+      display: inline-flex;
+      flex-direction: column;
+
+      &.horizontal {
+        flex-direction: row;
+      }
+
+      & > span {
+        font-size: 15px;
+      }
+
+      mat-checkbox {
+        margin-left: 16px;
+      }
+    }
+  }
+}
+
+.output {
+  display: flex;
+  flex-direction: column;
+
+  mat-card-content {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    font-size: 40px;
+    justify-content: center;
+  }
+}

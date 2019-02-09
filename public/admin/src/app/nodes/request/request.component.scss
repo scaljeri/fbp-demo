@@ -1,0 +1,23 @@
+fb-normal-node {
+  &:not(.is-active) {
+    .expanded {
+      display: none;
+    }
+  }
+
+  &.is-active {
+    .minified {
+      display: none;
+    }
+  }
+}
+
+.minified {
+  color: #fff;
+  padding: 16px;
+}
+
+.expanded {
+  background-color: #fff;
+  padding: 16px;
+}

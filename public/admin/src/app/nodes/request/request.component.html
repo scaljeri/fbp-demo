@@ -1,0 +1,13 @@
+<fb-normal-node (active)="onActive($event)">
+  <section class="minified">
+    {{this.endpoint}}
+  </section>
+
+  <section class="expanded">
+    <form class="format-form">
+      <mat-form-field class="example-full-width">
+        <input type="text" placeholder="Endpoint" aria-label="String" matInput [formControl]="endpointControl">
+      </mat-form-field>
+    </form>
+  </section>
+</fb-normal-node>

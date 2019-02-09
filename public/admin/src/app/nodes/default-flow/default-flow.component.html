@@ -1,0 +1,13 @@
+<fb-normal-node [fullscreen]="true" [deleteSocket]="true">
+  <img class="minified" src="./assets/config.svg">
+
+  <div class="expanded">
+    <button mat-fab class="add-socket socket-in" (click)="openDialog({type: 'in'})">
+      <mat-icon>add</mat-icon>
+    </button>
+
+    <button mat-fab class="add-socket socket-out" (click)="openDialog({type: 'out'})">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+</fb-normal-node>

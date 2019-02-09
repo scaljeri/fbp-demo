@@ -1,0 +1,21 @@
+@import './utils/utils';
+
+:host {
+}
+
+fb-normal-node {
+  &.is-active {
+    min-height: 300px;
+    min-width: 400px;
+  }
+
+  &.is-fullscreen {
+    .chart {
+      @include xxl-size(100%);
+    }
+  }
+}
+
+.chart {
+  border-radius: 8px;
+}

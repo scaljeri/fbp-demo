@@ -1,0 +1,21 @@
+{
+  "useTaobaoRegistry": false,
+  "packageManager": "yarn",
+  "presets": {
+    "favourite": {
+      "useConfigFiles": true,
+      "plugins": {
+        "@vue/cli-plugin-babel": {},
+        "@vue/cli-plugin-eslint": {
+          "config": "prettier",
+          "lintOn": [
+            "save"
+          ]
+        },
+        "@vue/cli-plugin-unit-jest": {}
+      },
+      "router": true,
+      "vuex": true
+    }
+  }
+}
