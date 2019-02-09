@@ -2,18 +2,19 @@
 
 Build backend:
 
-   $> yarn
+    $> yarn
 
 Build admin site:   
-   $> cd public/admin
-   $> yarn
-   $> yarn build
+
+    $> cd public/admin
+    $> yarn
+    $> yarn build
    
 Build site:
 
-   $> cd publuc/site
-   $> yarn
-   $> yarn build
+    $> cd publuc/site
+    $> yarn
+    $> yarn build
    
 ### Start 
 
