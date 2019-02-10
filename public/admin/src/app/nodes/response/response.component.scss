@@ -1,0 +1,15 @@
+.expanded {
+  display: none;
+}
+.is-active {
+  .minified {
+    display: none;
+  }
+
+  .expanded {
+    background-color: #fff;
+    display: block;
+    height: 50px;
+    padding: 20px;
+  }
+}

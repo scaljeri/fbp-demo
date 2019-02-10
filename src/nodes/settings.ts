@@ -12,6 +12,23 @@ export const EXCHANGE_SETTINGS = {
     ]
 };
 
+export const NOISE_SETTINGS = {
+    title: 'Noise',
+    config: {
+        noiseLevel: 15
+    },
+    sockets: [
+        {
+            type: 'in',
+            format: 'exchange'
+        },
+        {
+            type: 'out',
+            format: 'exchange'
+        }
+    ]
+};
+
 export const EXCHANGE_MERGE_SETTINGS = {
     title: 'Exchange merge',
     config: {},
@@ -68,7 +85,7 @@ export const RESPONSE_SETTINGS = {
 export const REQUEST_SETTINGS = {
     title: 'Request',
     config: {
-        endpoint: '/api/todos',
+        endpoint: '/api/crypto',
     },
     sockets: [
         {

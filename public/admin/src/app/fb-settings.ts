@@ -1,7 +1,6 @@
-import { NOISE_SETTINGS } from '../../../../src/nodes/noise';
 import {
   EXCHANGE_IP_SETTINGS, EXCHANGE_MERGE_SETTINGS,
-  EXCHANGE_SETTINGS,
+  EXCHANGE_SETTINGS, NOISE_SETTINGS,
   REQUEST_SETTINGS,
   RESPONSE_SETTINGS
 } from '../../../../src/nodes/settings';

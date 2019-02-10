@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
 
   activeOverlay: OverlayRef | null;
   showJson = false;
-  flow: XxlFlow; // = data.basic as XxlFlow;
+  flow: XxlFlow = { children: [], connections: []}; // = data.basic as XxlFlow;
   endpoint = 'crypto';
 
   @ViewChild('bg') bgImage: ElementRef;
@@ -48,8 +48,12 @@ export class AppComponent implements OnInit {
 
   loadJson(): void {
     this.service.loadFlow(this.endpoint).subscribe((flow: XxlFlow) => {
-        this.flow = flow;
+        this.flow = flow || { children: [], connections: []};
     });
+  }
+
+  clearJson(): void {
+    this.flow = { children: [], connections: []};
   }
 
   saveJson(): void {

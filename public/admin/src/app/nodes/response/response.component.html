@@ -1,4 +1,14 @@
 <fb-normal-node (active)="onActive($event)">
-  <fb-default-front [title]="title"></fb-default-front>
+  <fb-default-front class="minified" [title]="title"></fb-default-front>
+
+  <section class="expanded">
+    <form class="format-form">
+      <mat-select placeholder="Format" name="format" [(ngModel)]="state.sockets[0].format">
+        <mat-option *ngFor="let format of formats" [value]="format">
+          {{format}}
+        </mat-option>
+      </mat-select>
+    </form>
+  </section>
 </fb-normal-node>
 
